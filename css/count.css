@@ -1,0 +1,20 @@
+@import "reset.css";
+html,body{
+    width: 100%;
+    height: 100%;
+    background: #404040;
+}
+#wrap{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#wrap h1{
+    font-size: 30px;
+    color: #fff;
+    height: 100px;
+    line-height: 100px;
+    margin-left: 280px;
+    background: url("../images/data.png") no-repeat left;
+    padding-left: 60px;
+}

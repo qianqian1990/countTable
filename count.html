@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>城市核销统计表</title>
+    <link rel="stylesheet" href="css/count.css"/>
+</head>
+<body>
+<div id="wrap">
+    <h1>双11实时核销数(11月11日)</h1>
+    <canvas id="maCanvas"  width="1356" height="850" style="display:block;width:1356px;height:850px;margin:0 auto;">您的浏览器不支持canvas</canvas>
+</div>
+<script src="js/count.js"></script>
+<script>
+    var dat=[[5000,1000,5000,5600,1800,6000,2000,1050,3000,5007,7000,2580,2500,1080,1700],
+             [1000,1000,5000,5600,1800,6000,2670,1050,3000,5007,7000,2580,2500,1080,1700],
+             [8000,1000,5000,5600,1800,6000,2000,1050,3000,5007,7000,2580,2500,1080,5000]]
+    //var dd=[5000,1000,5000,5600,1800,6000,2000,1050,3000,5007,7000,2580,2500,1080,1700];
+    /*new LineChart({
+        x:["阳泉","邯郸","邢台","唐山","衡水","承德","保定","安阳","新乡","平顶山","许昌","商丘","南阳","信阳","洛阳","",""],
+        y:[0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+        xUnit:"市",
+        yUnit:"个/天",
+        data:{"color":"#63C4E4",da:dd}
+    },document.querySelector("canvas"));*/
+
+    setInterval(function(){
+
+        for(var i=0;i<dat.length;i++){
+            lineChart({
+                x:["阳泉","邯郸","邢台","唐山","衡水","承德","保定","安阳","新乡","平顶山","许昌","商丘","南阳","信阳","洛阳","",""],
+                y:[0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000],
+                xUnit:"市",
+                yUnit:"个/天",
+                data:{"color":"#63C4E4",da:dat[i]}
+            },document.querySelector("canvas"));
+        }
+
+    },1000)
+</script>
+</body>
+</html>
